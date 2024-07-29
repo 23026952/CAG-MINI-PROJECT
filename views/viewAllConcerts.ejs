@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>View All Concerts</title>
+    <style>
+        body {
+            background-image: url('/images/concert_background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white; /* Optional: to ensure text is readable */
+        }
+        .div {
+            background-color: rgba(0, 0, 0, 0.7); /* Optional: to make the card background semi-transparent */
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container mt-3">
+        <h2>All Concerts</h2>
+        <div class="row">
+            <% concerts.forEach(concert => { %>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/concert/<%= concert.id %>"><%= concert.event_name %></a></h5>
+                            <p class="card-text">$<%= concert.price %></p>
+                            <a href="/concert/<%= concert.id %>/update" class="btn btn-primary">Edit</a>
+                            <a href="/concert/<%= concert.id %>/delete" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+</body>
+</html>
