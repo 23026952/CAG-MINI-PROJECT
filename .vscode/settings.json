@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/0fdcd8ff-e4c3-4668-a215-f41953aa1e5d/resourceGroups/C237Lesson12-Santosh/providers/Microsoft.Web/sites/C237Lesson12-Santosh",
+    "appService.deploySubpath": "."
+}

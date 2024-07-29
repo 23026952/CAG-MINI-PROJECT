@@ -200,7 +200,7 @@ app.post('/cart/pay', (req, res) => {
 
 
 // Start the server and listen on the specified port
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3306;
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
